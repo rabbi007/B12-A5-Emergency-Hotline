@@ -17,12 +17,19 @@
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <style>
+        /* Hero Section -> Background Gradient */
+        .gradient-hero {
+            background: linear-gradient(90.00deg, rgba(1.251827359199524, 49.64006805419922, 34.606834411621094, 1), rgba(0, 103, 71, 1) 50%, rgba(1, 50, 35, 1) 100%);
+        }
+    </style>
 
 </head>
 
 <body class="min-h-screen bg-base-200">
 
-    <!-- Navbar Section-->
+    <!---------------- Navbar Section ---------------------------------->
+
     <nav class="navbar bg-base-100 sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-4 flex items-center">
             <div class="flex-1">
@@ -35,25 +42,37 @@
                 <ul class="menu menu-horizontal px-1 items-center gap-4">
                     <li>
                         <div class="flex items-center gap-2 bg-[#41ff6b1a] rounded-full">
-                            <span class="font-semibold">0</span>
-                            <img src="./assets/heart.png" alt="Hearts" class="h-5 w-5" />
+                            <span id="heartCount" class="font-semibold">0</span>
+                            <img src="./assets/heart.png" alt="heart" class="h-5 w-5" />
                         </div>
                     </li>
                     <li>
                         <div class="flex items-center gap-2 bg-[#41ff6b1a] rounded-full">
-                            <span class="font-semibold">100</span>
-                            <img src="./assets/coin.png" alt="Coins" class="h-5 w-5" />
+                            <span id="coinCount" class="font-semibold">100</span>
+                            <img src="./assets/coin.png" alt="coin" class="h-5 w-5" />
                         </div>
                     </li>
                     <li>
                         <div class="flex items-center gap-2 bg-[#00a63e] text-white rounded-full">
-                            <span class="font-semibold">0 Copy</span>
+                            <span id="copyCount" class="font-semibold">0 Copy</span>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!------------------ Hero Section ---------------------------------->
+
+    <section class="gradient-hero">
+        <div class="container mx-auto px-4 py-14 text-center">
+            <div class="flex justify-center mb-6">
+                <img src="./assets/logo-dark.png" alt="logo-dark" class="h-16 w-16" />
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">Emergency Service Directory</h1>
+            <p class="mt-6 text-lg sm:text-xl opacity-90 text-white">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
+        </div>
+    </section>
 
 
     <script src="./script.js"></script>
