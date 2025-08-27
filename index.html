@@ -289,7 +289,7 @@
                     <div id="contactNumber" class="font-bold">163</div>
                     <div class="flex">
                         <div id="contactCategory" class="bg-slate-200 px-3 py-1 rounded-full text-center">Travel</div>
-                    </div>ad
+                    </div>
                     <div class="flex justify-center gap-10 mt-3">
                         <button class="copyBtn px-5 border border-gray-300 rounded-md text-gray-400">
                             <i class="fa-regular fa-copy"></i>Copy
@@ -316,7 +316,43 @@
             </div>
         </div>
     </div>
+    <script>
+        // Update for targeting multiple cards with classes
+document.querySelector("#card-container").addEventListener("click", function (e) {
+    // Heart click and increment heart count
+    if (e.target.classList.contains("fa-heart")) {
+        const heartCount = document.querySelector("#heartCount");
+        heartCount.textContent = parseInt(heartCount.textContent) + 1;
+    }
 
+    // Handle call button functionality
+    if (e.target.classList.contains("callBtn")) {
+        const coinCount = document.querySelector("#coinCount");
+        const coinAmount = parseInt(coinCount.textContent);
+
+        if (coinAmount >= 20) {
+            // Simulate a phone call and subtract coins
+            const card = e.target.closest('.card');
+            const cardTitle = card.querySelector('.font-bold').innerText;
+            const contactNumber = card.querySelector('#contactNumber').innerText;
+            alert(`Calling ${cardTitle}: ${contactNumber}`);
+
+            coinCount.textContent = coinAmount - 20;
+        } else {
+            alert("You don't have enough coins to make a call.");
+        }
+    }
+
+    // Handle copy button functionality
+    if (e.target.classList.contains("copyBtn")) {
+        const card = e.target.closest('.card');
+        const contactNumber = card.querySelector('#contactNumber').innerText;
+        alert(`Number copied: ${contactNumber}`);
+        navigator.clipboard.writeText(contactNumber);
+    }
+});
+
+    </script>
 
     <script src="./script.js"></script>
 </body>
